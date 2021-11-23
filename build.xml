@@ -6,36 +6,36 @@
 <property name="src" location="src"/>
 <property name="build" location="build"/>
 <property name="dist" location="dist"/>
-<property name="lib" location="lib"/>
+<property name="lib" location="old/lib"/>
 <property name="ex" location="testdata"/>
 
 <path id="libraries.path">
 	<!-- HERMIT --> 
-	<pathelement location="${lib}/hermit-v136-libs/axiom-1.2.8.jar"/>
-	<pathelement location="${lib}/hermit-v136-libs/dk.brics.automaton-1.11-2.jar"/>
-	<pathelement location="${lib}/hermit-v136-libs/jautomata-core-2.0-alpha-1.jar"/>
-	<pathelement location="${lib}/hermit-v136-libs/junit-4.4.jar"/>
-	<pathelement location="${lib}/hermitv136/HermiT.jar"/>
+	<pathelement location="/old/lib/hermit-v136-libs/axiom-1.2.8.jar"/>
+	<pathelement location="/old/lib/hermit-v136-libs/dk.brics.automaton-1.11-2.jar"/>
+	<pathelement location="/old/lib/hermit-v136-libs/jautomata-core-2.0-alpha-1.jar"/>
+	<pathelement location="/old/lib/hermit-v136-libs/junit-4.4.jar"/>
+	<pathelement location="/old/lib/hermitv136/HermiT.jar"/>
 	<!-- PELLET --> 
-	<pathelement location="${lib}/pelletv230/aterm-java-1.6.jar"/>
-	<pathelement location="${lib}/pelletv230/pellet-cli.jar"/>
-	<pathelement location="${lib}/pelletv230/pellet-core.jar"/>
-	<pathelement location="${lib}/pelletv230/pellet-datatypes.jar"/>
-	<pathelement location="${lib}/pelletv230/pellet-dig.jar"/>
-	<pathelement location="${lib}/pelletv230/pellet-el.jar"/>
-	<pathelement location="${lib}/pelletv230/pellet-explanation.jar"/>
-	<pathelement location="${lib}/pelletv230/pellet-jena.jar"/>
-	<pathelement location="${lib}/pelletv230/pellet-modularity.jar"/>
-	<pathelement location="${lib}/pelletv230/pellet-owlapiv3.jar"/>
-	<pathelement location="${lib}/pelletv230/pellet-pellint.jar"/>
-	<pathelement location="${lib}/pelletv230/pellet-query.jar"/>
-	<pathelement location="${lib}/pelletv230/pellet-rules.jar"/>
-	<pathelement location="${lib}/pelletv230/servlet.jar"/>
-	<pathelement location="${lib}/pelletv230-libs/jgrapht-jdk1.5.jar"/>
+	<pathelement location="/old/lib/pelletv230/aterm-java-1.6.jar"/>
+	<pathelement location="/old/lib/pelletv230/pellet-cli.jar"/>
+	<pathelement location="/old/lib/pelletv230/pellet-core.jar"/>
+	<pathelement location="/old/lib/pelletv230/pellet-datatypes.jar"/>
+	<pathelement location="/old/lib/pelletv230/pellet-dig.jar"/>
+	<pathelement location="/old/lib/pelletv230/pellet-el.jar"/>
+	<pathelement location="/old/lib/pelletv230/pellet-explanation.jar"/>
+	<pathelement location="/old/lib/pelletv230/pellet-jena.jar"/>
+	<pathelement location="/old/lib/pelletv230/pellet-modularity.jar"/>
+	<pathelement location="/old/lib/pelletv230/pellet-owlapiv3.jar"/>
+	<pathelement location="/old/lib/pelletv230/pellet-pellint.jar"/>
+	<pathelement location="/old/lib/pelletv230/pellet-query.jar"/>
+	<pathelement location="/old/lib/pelletv230/pellet-rules.jar"/>
+	<pathelement location="/old/lib/pelletv230/servlet.jar"/>
+	<pathelement location="/old/lib/pelletv230-libs/jgrapht-jdk1.5.jar"/>
 	<!-- OWL_API --> 
-	<pathelement location="${lib}/owlapiv322/owlapi-3.2.2.jar"/>
+	<pathelement location="/old/lib/owlapiv322/owlapi-3.2.2.jar"/>
 	<!-- LOG4J --> 
-	<pathelement location="${lib}/log4j1216/log4j-1.2.16.jar"/>
+	<pathelement location="/old/lib/log4j1216/log4j-1.2.16.jar"/>
 </path>
 	
 <pathconvert property="manifest.classpath" pathsep=" ">
@@ -85,19 +85,19 @@
     </jar>	
 	<!-- copy required libraries -->
 	<copy todir="${dist}/lib">
-		<fileset dir="${lib}/pelletv230">
+		<fileset dir="/old/lib/pelletv230">
 			<exclude name=".svn"/>
 		</fileset>
 	</copy>
-	<copy file="${lib}/pelletv230-libs/jgrapht-jdk1.5.jar" tofile="${dist}/lib/jgrapht-jdk1.5.jar"/>
-	<copy file="${lib}/hermitv136/HermiT.jar" tofile="${dist}/lib/HermiT.jar"/>
+	<copy file="/old/lib/pelletv230-libs/jgrapht-jdk1.5.jar" tofile="${dist}/lib/jgrapht-jdk1.5.jar"/>
+	<copy file="/old/lib/hermitv136/HermiT.jar" tofile="${dist}/lib/HermiT.jar"/>
 	<copy todir="${dist}/lib">
-		<fileset dir="${lib}/hermit-v136-libs">
+		<fileset dir="/old/lib/hermit-v136-libs">
 			<exclude name=".svn"/>
 		</fileset>
 	</copy>
-	<copy file="${lib}/log4j1216/log4j-1.2.16.jar" tofile="${dist}/lib/log4j-1.2.16.jar"/>
-	<copy file="${lib}/owlapiv322/owlapi-3.2.2.jar" tofile="${dist}/lib/owlapi-3.2.2.jar"/>
+	<copy file="/old/lib/log4j1216/log4j-1.2.16.jar" tofile="${dist}/lib/log4j-1.2.16.jar"/>
+	<copy file="/old/lib/owlapiv322/owlapi-3.2.2.jar" tofile="${dist}/lib/owlapi-3.2.2.jar"/>
 	<!-- copy required examples -->
 	<copy todir="${dist}/testdata/conference">
 		<fileset dir="${ex}/conference">
@@ -140,7 +140,7 @@
 		</fileset>
 	</copy>
 	<copy todir="${dist}/eclipseproject/lib">
-		<fileset dir="lib/" casesensitive="yes">
+		<fileset dir="old/lib/" casesensitive="yes">
 			<include name="**/*.jar"/>
 			<exclude name=".svn"/>
 		</fileset>

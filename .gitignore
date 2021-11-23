@@ -29,7 +29,7 @@ buildNumber.properties
 ##############################
 ## Gradle
 ##############################
-bin/
+old/bin/
 build/
 .gradle
 .gradletasknamecache
@@ -52,7 +52,7 @@ out/
 ## Eclipse
 ##############################
 .settings/
-bin/
+old/bin/
 tmp/
 .metadata
 .classpath
@@ -147,7 +147,7 @@ hs_err_pid*
 
 
 # project related
-/lib
-/bin
+/old/lib
+/old/bin
 *.classpath
 *.project
