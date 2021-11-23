@@ -45,7 +45,7 @@
         <connection>scm:git:git://github.com/dwslab/alcomo</connection>
         <developerConnection>scm:git:git@github.com:dwslab/alcomo.git</developerConnection>
         <url>https://github.com/dwslab/alcomo</url>
-        <tag>alcomo-1.1</tag>
+        <tag>alcomo-1.0</tag>
     </scm>
 
     <distributionManagement>
