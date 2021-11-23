@@ -17,6 +17,7 @@
 
     <name>ALCOMO - Applying Logical Constraints on Matching Ontologies</name>
     <description>Maven fork of the original ALCOMO code base.</description>
+    <url>https://web.informatik.uni-mannheim.de/alcomo/</url>
 
     <licenses>
         <license>
