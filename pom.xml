@@ -4,7 +4,7 @@
 
     <groupId>de.uni-mannheim.informatik.dws</groupId>
     <artifactId>alcomo</artifactId>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -44,7 +44,7 @@
         <connection>scm:git:git://github.com/dwslab/alcomo</connection>
         <developerConnection>scm:git:git@github.com:dwslab/alcomo.git</developerConnection>
         <url>https://github.com/dwslab/alcomo</url>
-        <tag>alcomo-1.0</tag>
+        <tag>alcomo-1.1</tag>
     </scm>
 
     <distributionManagement>
