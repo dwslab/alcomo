@@ -146,6 +146,45 @@
         </plugins>
     </build>
 
+    <profiles>
+
+        <profile>
+            <id>alcomo-release</id> <!-- mvn ... -P melt-release,default -->
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>3.0.1</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>3.2.1</version>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+    </profiles>
+
     <dependencies>
 
         <dependency>
@@ -164,7 +203,8 @@
         <dependency>
             <groupId>net.sourceforge.owlapi</groupId>
             <artifactId>owlapi-distribution</artifactId>
-            <version>3.5.7</version> <!-- latest 5.x version is 5.1.19 , ltest 4.x version is 4.5.5 latest 3.x version is 3.5.7-->
+            <version>3.5.7
+            </version> <!-- latest 5.x version is 5.1.19 , ltest 4.x version is 4.5.5 latest 3.x version is 3.5.7-->
         </dependency>
 
         <dependency>
@@ -273,7 +313,6 @@
         </dependency>
 
     </dependencies>
-
 
 
     <repositories>
