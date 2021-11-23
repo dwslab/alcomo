@@ -51,8 +51,6 @@ public class AlcomoLogger {
 
 	/**
 	* Logs a start sign for a series of progress infos as info message.
-	* 
-	* @param word
 	*/
 	public void infoPStart() {
 		this.log.info("[ ");
@@ -69,8 +67,6 @@ public class AlcomoLogger {
 	
 	/**
 	* Logs a end sign for a series of progress infos as info message followed by a newline.
-	* 
-	* @param word
 	*/
 	public void infoPEnd() {
 		this.log.info("]\n");
@@ -79,7 +75,7 @@ public class AlcomoLogger {
 	/**
 	* Logs a word as info message.
 	* 
-	* @param word
+	* @param word Word to be logged.
 	*/
 	public void infoW(String word) {
 		this.log.info(word);
@@ -88,7 +84,7 @@ public class AlcomoLogger {
 	/**
 	* Logs a double interpreted as progress in percentage as info message.
 	* 
-	* @param word
+	* @param progress The progress to be logged.
 	*/
 	public void infoP(double progress) {
 		// System.out.println("xx: " +  progress);
@@ -98,7 +94,7 @@ public class AlcomoLogger {
 	/**
 	* Logs a statement as info message. Message will be surrounded by [ ] followed by a newline.
 	*  
-	* @param statement
+	* @param statement The statement to be logged.
 	*/
 	public void infoS(String statement) {
 		this.log.info("[" + statement + "]\n");
@@ -107,7 +103,7 @@ public class AlcomoLogger {
 	/**
 	* Logs a statement as warning. Message will be surrounded by [WARNING: ] followed by a newline.
 	*  
-	* @param statement
+	* @param statement Statement to be logged.
 	*/
 	public void warnS(String statement) {
 		this.log.warn("[!WARN! " + statement + " !WARN!]\n");

@@ -130,7 +130,6 @@ public class IOntology extends LocalOntology {
 	* Iterates via depth first search through the subsumption tree.
 	* 
 	* @param concept The concept that is the root of the tree. 
-	* @param concept The super concept of the concept.  
 	*/
 	private IConcept buildTree(OWLClass concept, OWLClass superConcept) {
 		IConcept ic = null;
@@ -289,8 +288,8 @@ public class IOntology extends LocalOntology {
 	
 	/**
 	* 
-	* @param conceptEx1
-	* @param conceptEx2
+	* @param conceptEx1 Expression 1
+	* @param conceptEx2 Expression 2
 	*/
 	private void extendByStatedDisjointness(OWLClassExpression conceptEx1, OWLClassExpression conceptEx2) {
 		//System.out.println();
@@ -363,8 +362,7 @@ public class IOntology extends LocalOntology {
 	* Removes from the core list all intervals that are not in the some list.
 	*  
 	* @param core The ArrayList that is replaced 
-	* @param some
-	* @return
+	* @param some Array list.
 	*/
 	private static void reduceToIntersection(ArrayList<Interval> core, ArrayList<Interval> some) {
 		for (int i = 0; i < core.size(); i++) {

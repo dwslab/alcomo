@@ -170,10 +170,9 @@ public class MergedOntology extends AlcomoOntology {
 	/**
 	* Dont you ever use this, very bad hack for generating merged ontology without helper classes.
 	*  
-	* @param mo
-	* @param filepath
-	* @param mapping
-	 * @throws URISyntaxException 
+	* @param filepath File path
+	* @param mapping Mapping
+	* @throws URISyntaxException Exception
 	*/
 	public void writeMergedOntology(String filepath, Mapping mapping) throws URISyntaxException {
 		

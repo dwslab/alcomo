@@ -45,8 +45,8 @@ public class ThreadTimer {
     /**
      * Constructor for a thread.
      *
-     * @param thread
-     * @param intervalInMilliSeconds
+     * @param thread Thread
+     * @param intervalInMilliSeconds Interval in millis.
      */
     public ThreadTimer(Thread thread, long intervalInMilliSeconds) {
         this.thread = thread;
@@ -85,7 +85,7 @@ public class ThreadTimer {
      * Disable the concurrent execution of the "own" thread and 
      * the regular application thread.
      *
-     * @param concurrentExecution
+     * @param concurrentExecution Boolean which will be set.
      */
     public void setConcurrentExecution(boolean concurrentExecution) {
         this.concurrentExecution = concurrentExecution;
@@ -102,8 +102,8 @@ class ThreadInterruptTask extends TimerTask {
     private Thread thread;
 
     /**
-     *
-     * @param thread
+     * Constructor
+     * @param thread Thread
      */
     public ThreadInterruptTask(Thread thread) {
         this.thread = thread;

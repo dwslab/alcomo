@@ -136,8 +136,8 @@ public class Mapping implements Iterable<Correspondence>, Comparable<Mapping>   
 	/**
 	* Writes a mapping in RDF format to a specified path.
 	* 
-	* @param filepath
-	* @throws MappingException
+	* @param filepath Filepath that will be written.
+	* @throws MappingException Exception.
 	*/
 	public void write(String filepath) throws MappingException {
 		this.write(filepath, FORMAT_RDF);
@@ -157,7 +157,7 @@ public class Mapping implements Iterable<Correspondence>, Comparable<Mapping>   
 	/**
 	* Constructs a mapping with the given set of correspondences.
 	* 
-	* @param correspondences The correspondences of the mapping as set.
+	* @param correspondencesAsSet The correspondences of the mapping as set.
 	*/
 	public Mapping(Set<Correspondence> correspondencesAsSet) {
 		this.setCorrespondences(correspondencesAsSet);
@@ -404,9 +404,6 @@ public class Mapping implements Iterable<Correspondence>, Comparable<Mapping>   
 	
 	/**
 	* Normalizes the confidences of the correspondences to the range [0.0, 1.0].
-	* 
-	* @param minBound The lower bound (inclusive) of the range.
-	* @param maxBound The upper bound (inclusive) of the range.
 	*/
 	public void normalize() {
 		this.normalize(0.0, 1.0);
@@ -765,8 +762,8 @@ public class Mapping implements Iterable<Correspondence>, Comparable<Mapping>   
 	* 
 	* @param mappings The mappings to be joined.
 	* @return The joined mapping.
-	* @throws PCFException
-	* @throws CorrespondenceException
+	* @throws PCFException Exception
+	* @throws CorrespondenceException Exception
 	*/
 	public static Mapping getJoinedMapping(Mapping[] mappings) throws PCFException, CorrespondenceException {
 		double[] weights = new double[mappings.length];
@@ -881,9 +878,9 @@ public class Mapping implements Iterable<Correspondence>, Comparable<Mapping>   
 	* Helper method for easy working with different version of alignments that encoded version numbers in 
 	* uris (like for each year of the benchmark track).
 	* 
-	* @param regExp
-	* @param newString
-	* @throws CorrespondenceException
+	* @param regExp Regular Expression
+	* @param newString The new string.
+	* @throws CorrespondenceException Exception.
 	*/
 	public void replaceSubstring(String regExp, String newString) throws CorrespondenceException {
 		String e1, e2;
@@ -895,7 +892,6 @@ public class Mapping implements Iterable<Correspondence>, Comparable<Mapping>   
 			// System.out.println(e1);
 			c.setSourceEntityUri(e1);
 			c.setTargetEntityUri(e2);
-			
 		}
 		
 	}
@@ -997,14 +993,14 @@ public class Mapping implements Iterable<Correspondence>, Comparable<Mapping>   
 	}
 
 	/**
-	 * Joins all pairs like a < b and a > b into equivalence correspondences a = b in place.
+	 * Joins all pairs like a &lt; b and a &gt; b into equivalence correspondences a = b in place.
 	 */
 	public void joinToEquivalence() {
-		ArrayList<Correspondence> joinedCorrespondences = new ArrayList<Correspondence>();
-		HashSet<String> subCorKeys = new HashSet<String>();
-		HashSet<String> superCorKeys = new HashSet<String>();
-		HashSet<Correspondence> subCorrs = new HashSet<Correspondence>();
-		HashSet<Correspondence> superCorrs = new HashSet<Correspondence>();
+		ArrayList<Correspondence> joinedCorrespondences = new ArrayList<>();
+		HashSet<String> subCorKeys = new HashSet<>();
+		HashSet<String> superCorKeys = new HashSet<>();
+		HashSet<Correspondence> subCorrs = new HashSet<>();
+		HashSet<Correspondence> superCorrs = new HashSet<>();
 		for (Correspondence c : this) {
 			String key = c.getSourceEntityUri() + c.getTargetEntityUri();
 			if (c.getRelation().getType() == SemanticRelation.SUB) {

@@ -75,7 +75,7 @@ public abstract class AlcomoProblem {
 	/**
 	* Sets an ontology as target ontology.
 	* 
-	* @param targetOntologyUri The target ontology.
+	* @param targetOntology The target ontology.
 	* @throws PCFException Thrown if target ontology already has been specified. 
 	*/	
 	public void bindTargetOntology(LocalOntology targetOntology) throws PCFException {

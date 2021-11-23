@@ -178,8 +178,8 @@ public class EfficientReasoner extends AlcomoReasoner {
 	* 
 	* @param c A correspondence for which conflict sensitivity has to be computed.
 	* @param exactness The size of the sample in number of randomly generated correspondences.
-	* @return A probabaility for c to in in a conflict with a randomly generated correspondence.
-	* @throws CorrespondenceException
+	* @return A probability for c to in in a conflict with a randomly generated correspondence.
+	* @throws CorrespondenceException Exception
 	*/
 	public double estimateConflictSensitivity(Correspondence c, int exactness) throws CorrespondenceException {
 		Correspondence cr;

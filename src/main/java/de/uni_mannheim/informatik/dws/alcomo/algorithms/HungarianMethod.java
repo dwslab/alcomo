@@ -138,8 +138,8 @@ class HungarianMethod  {
 	/**
 	 * Only for test purpose!
 	 * 
-	 * @param mappingMatrix
-	 * @return
+	 * @param mappingMatrix The Mapping Matrix.
+	 * @return Correspondence array.
 	 */
 	public Correspondence[] getChosenCorrespondences(MappingMatrix mappingMatrix) {
 		 Correspondence[] chosenCorrespondences = new Correspondence[this.dimension];

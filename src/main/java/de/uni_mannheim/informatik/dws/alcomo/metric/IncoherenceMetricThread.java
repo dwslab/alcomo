@@ -38,7 +38,7 @@ import de.uni_mannheim.informatik.dws.alcomo.ontology.LocalOntology;
 * Only computes the max-card measure, can be used with a timeout, and returns
 * the score so far computed (= a lower bound for the correct value). It will be
 * applied only to a subset of the alignment which is the set of those
-* correspondences that have a confidence > 0 and are  equivalence correspondences.
+* correspondences that have a confidence &gt; 0 and are  equivalence correspondences.
 */
 class IncoherenceMetricThread extends Thread {
 	

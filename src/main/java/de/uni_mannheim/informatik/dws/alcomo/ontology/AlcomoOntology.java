@@ -213,11 +213,11 @@ public abstract class AlcomoOntology {
 	// ********************************
 	
 	/**
-	* Checks wether first class is subclass of second class. Equivalent classes arse also in subclass relation.
+	* Checks whether first class is subclass of second class. Equivalent classes are also in a subclass relation.
 	* 
 	* @param c1 First class.
 	* @param c2 Second class.
-	* @return 
+	* @return True if first class (c1) is a subclass of the second class (c2), else false.
 	*/
 	public boolean isSubClassOfClass(OWLClass c1, OWLClass c2) {
 		OWLAxiom subClassOfAxiom  = factory.getOWLSubClassOfAxiom(c1, c2);
@@ -322,8 +322,8 @@ public abstract class AlcomoOntology {
 	* Writes the ontology into a file.
 	* 
 	* @param filepath Destination path
-	* @throws OntologyException Thrwon if file could not be written.
-	* @throws AlcomoException 
+	* @throws OntologyException Thrown if file could not be written.
+	* @throws AlcomoException Exception
 	*/
 	public void write(String filepath) throws AlcomoException {
 		try {

@@ -73,8 +73,8 @@ public class MappingFamiliy {
 	* Returns the merged mapping where confindences have been computed in a way
 	* such that the following holds for two correspondences c1 and c2:
 	* 
-	* (1) conf(c1) &lth; conf(c2) iff less systems found c1 (Vote).
-	* (2) conf(c1) &lth; conf(c2) iff the same number of systems found c1 and c2
+	* (1) conf(c1) &lt; conf(c2) iff less systems found c1 (Vote).
+	* (2) conf(c1) &lt; conf(c2) iff the same number of systems found c1 and c2
 	* but c1 has a lower total of confidence values (Confidence).
 	* 
 	*  All confidences are spanned to [0.0, 1.0] before computing this.

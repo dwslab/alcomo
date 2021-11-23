@@ -71,11 +71,11 @@ public class Correspondence implements Comparable<Correspondence>  {
 	/**
 	* Constructs an unbound correspondence with confidence value set to 1.0.
 	* 
-	* @param sourceEntityUri Uri of the source entity.
-	* @param targetEntityUri Uri of the target entity.
+	* @param sourceConcept Uri of the source entity.
+	* @param targetConcept Uri of the target entity.
 	* @param relation Semantic relation between two entities.
 	* @param confidence Confidence value of this correspondence.
-	* @throws CorrespondenceException Thrown if the uris are not wellformed (in a weak sense) and
+	* @throws CorrespondenceException Thrown if the uris are not well-formed (in a weak sense) and
 	* if the confidence value is not in the range from 0.0 to 1.0.
 	* Checking wether the uri reference can be resolved does not occur in this context.
 	*/
@@ -337,7 +337,7 @@ public class Correspondence implements Comparable<Correspondence>  {
 	/**
 	* Creates and returns a new instance that is a deep clone of this correspondences. used to (deep) copy
 	* mappings without keeping the same references to correspondences or their attributes.
-	* @return
+	* @return Correspondence
 	*/
 	public Correspondence getDeepCopy() {
 		Correspondence cloned = null;
@@ -347,7 +347,6 @@ public class Correspondence implements Comparable<Correspondence>  {
 			cloned.setSourceEntity(this.sourceEntity);
 			cloned.setTargetEntity(this.targetEntity);
 			cloned.id = 0;
-			
 		}
 		catch (CorrespondenceException e) {
 			e.printStackTrace();

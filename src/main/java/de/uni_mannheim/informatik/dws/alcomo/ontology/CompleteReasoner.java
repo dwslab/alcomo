@@ -56,7 +56,7 @@ public class CompleteReasoner extends AlcomoReasoner {
 	* @param sourceOntology Source ontology.
 	* @param targetOntology Target ontology.
 	* @param extractionProblem The extraction problem that this reasoner is used for.
-	* @throws AlcomoException
+	* @throws AlcomoException Exception
 	*/	
 	public CompleteReasoner(LocalOntology sourceOntology, LocalOntology targetOntology, ExtractionProblem extractionProblem) throws AlcomoException {
 		super(sourceOntology, targetOntology, extractionProblem);
@@ -147,12 +147,12 @@ public class CompleteReasoner extends AlcomoReasoner {
 	
 	/**
 	* Searches binary and returns a correspondence being part of a conflict. The following applies for
-	* this method (the order of the mapping is referred to as >). If c is removed from the mapping,
-	* the sub set {c' in m | c' < c} of the mapping contains no conflict.
+	* this method (the order of the mapping is referred to as &gt;). If c is removed from the mapping,
+	* the sub set {c' in m | c' &lt; c} of the mapping contains no conflict.
 	* 
 	* @param mapping The mapping where the correspondence is searched for.
-	* @return The correspondence cusing the conflict or null, if there exists no conflict in the mapping. 
-	* @throws AlcomoException   
+	* @return The correspondence causing the conflict or null, if there exists no conflict in the mapping.
+	* @throws AlcomoException Exception
 	*/
 	public Correspondence searchInvalidCorrespondence(Mapping mapping) throws AlcomoException {
 		// an empty mapping cannot contain a conflict
@@ -180,7 +180,7 @@ public class CompleteReasoner extends AlcomoReasoner {
 	* respect to previous calls of this method.
 	* 
 	* @param mapping The mapping that will be attached.
-	* @throws OntologyException 
+	* @throws OntologyException Exception
 	*/
 	public void attachValidatedMapping(Mapping mapping) throws OntologyException {
 		Set<OWLAxiom> validatedAxioms = this.mergedOntology.toAxioms(mapping);
@@ -191,7 +191,7 @@ public class CompleteReasoner extends AlcomoReasoner {
 	/**
 	* Removes an (incrementally) attached validated mapping.
 	* 
-	* @throws OntologyException 
+	* @throws OntologyException Exception
 	*/
 	public void resetValidatedMapping() throws OntologyException {
 		this.mergedOntology.removeAxioms(this.attachedValidatedAxioms);

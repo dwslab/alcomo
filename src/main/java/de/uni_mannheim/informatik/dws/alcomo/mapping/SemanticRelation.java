@@ -43,12 +43,12 @@ public class SemanticRelation {
 	public static final int EQUIV = 1;
 	
 	/**
-	* Relation of subsumption, e.g. A < B.
+	* Relation of subsumption, e.g. A &lt; B.
 	*/
 	public static final int SUB = 2;
 	
 	/**
-	* Relation of supsumption, e.g. A > B.
+	* Relation of subsumption, e.g. A &gt; B.
 	*/
 	public static final int SUPER = 3;	
 	

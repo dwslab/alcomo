@@ -35,12 +35,12 @@ import de.uni_mannheim.informatik.dws.alcomo.ontology.LocalOntology;
 * Only computes the max-card measure, can be used with a timeout, and returns
 * the score so far computed (= a lower bound for the correct value). It will be
 * applied only to a subset of the alignment which is the set of those
-* correspondences that have a confidence > 0 and are  equivalence correspondences.
+* correspondences that have a confidence &gt; 0 and are  equivalence correspondences.
 */
 public class IncoherenceMetric {
 	
 	// default is a 5 minute timeout
-	private final long DEFAULT_TIMEOUT = 300000l; 
+	private final long DEFAULT_TIMEOUT = 300000L;
 	
 	private IncoherenceMetricThread imt;
 
@@ -63,9 +63,9 @@ public class IncoherenceMetric {
 	* Runs an evaluation by applying the incoherence metric a.k.a maximum cardinality
 	* incoherence measure (as defined in Meilicke,Stuckenschmidt OM 2008).
 	* 
-	* @param sourceOntPathOrUri Filepath or URL of the source ontology.
-	* @param targetOntPathOrUri Filepath or URL of the target ontology.
-	* @param mappingPathOrUri Filepath or URL of the target ontology.
+	* @param sourceOnt Filepath or URL of the source ontology.
+	* @param targetOnt Filepath or URL of the target ontology.
+	* @param mapping Filepath or URL of the target ontology.
 	*/
 	public void eval(LocalOntology sourceOnt, LocalOntology targetOnt, Mapping mapping) {
 		this.imt.eval(sourceOnt, targetOnt, mapping);

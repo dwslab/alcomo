@@ -223,7 +223,7 @@ public class ExtractionProblem extends AlcomoProblem {
 
 	/**
 	* Calling this method adds disjointness axioms for each part-of axiom. More precisely:
-	* for each A < Ex.part-of.B the method adds the axiom A < non B to the ontology.
+	* for each A &lt; Ex.part-of.B the method adds the axiom A &lt; non B to the ontology.
 	* This method is especially designed for medical contexts, but should also work
 	* for other domains. Each relation that contains a *part+of* pattern 
 	* will be accounted as a part of relation. 
@@ -276,7 +276,7 @@ public class ExtractionProblem extends AlcomoProblem {
 	* Requires to solve the extraction problem first.
 	* 
 	* @return True if extracted mapping is coherent, false otherwise.
-	 * @throws AlcomoException 
+	* @throws AlcomoException Exception.
 	*/
 	public boolean isCoherentExtraction() throws AlcomoException {
 		if (!this.solved) {
@@ -496,8 +496,8 @@ public class ExtractionProblem extends AlcomoProblem {
 	* Returns the uris (as strings) of all unsatisfiable concepts of both local ontologies. This comprises
 	* also the additionally introduced concepts used for reasoning over properties.
 	* 
-	*  @return The set of the URIs of all locally unsatisfiable concepts.
-	 * @throws AlcomoException 
+	* @return The set of the URIs of all locally unsatisfiable concepts.
+	* @throws AlcomoException Exception.
 	*/
 	public HashSet<String> getLocalUnsatisfiableEntities() throws AlcomoException {
 		if (this.initialized) {

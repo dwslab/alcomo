@@ -72,7 +72,6 @@ public class Characteristic {
 	* 
 	* @param mapping The mapping under discussion.
 	* @param reference The reference mapping.
-	* @throws ALCOMOException Thrown if the namespaces of the mappings differ.
 	*/
 	public Characteristic(Mapping mapping, Mapping reference) {
 		// Mapping correct = reference.getIntersection(mapping); 

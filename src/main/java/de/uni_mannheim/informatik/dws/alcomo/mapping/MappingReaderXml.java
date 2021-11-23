@@ -45,8 +45,8 @@ import javax.xml.parsers.SAXParserFactory;
 /**
 * A mapping reader for rdf/xml format reads mappings from rdf-files. The format supported is the
 * one described in the Alignment API. But notice that not all kinds of specifications are supported.
-* More precise it should work with any level 0 mapping, where the relations =, < and > are used
-* to state correspodences between concepts or properties.
+* More precise it should work with any level 0 mapping, where the relations =, &lt; and &gt; are used
+* to state correspondences between concepts or properties.
 */
 public class MappingReaderXml extends DefaultHandler implements MappingReader {
     

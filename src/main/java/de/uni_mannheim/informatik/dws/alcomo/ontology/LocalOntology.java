@@ -170,9 +170,8 @@ public class LocalOntology extends AlcomoOntology {
 	* Initalising an extandable ontology results in extending the ontology and
 	* building up some indices. Finally the extended ontology is classified.
 	*  
-	* @param extractionProblem 
-	* @throws OntologyException 
-	* @throws AlcomoException
+	* @param extractionProblem The extraction problem
+	* @throws OntologyException Exception
 	*/
 	public void init(ExtractionProblem extractionProblem) throws OntologyException {
 		if (this.initialized) { return; }

@@ -61,8 +61,7 @@ public class EntityFactory {
 	* 
 	* @param property The corresponding property.
 	* @param domain Domain class extension of the property.
-	* @param range Range class extension of the property
-	* 
+	*
 	* @return The constructed entity.
 	*/
 	public static Entity createObjectPropertyEntity(OWLObjectProperty property, OWLClass domain) {
