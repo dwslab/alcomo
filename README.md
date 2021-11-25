@@ -16,5 +16,8 @@ Christian Meilicke. Alignment Incoherence in Ontology Matching. University Mannh
 - Refactoring from `log4j` to `slf4j`.
 - Upload to maven central.
 
+## Project-Specific Documentation
 
-
+### Creating a New Release for Maven Central
+- `mvn release:prepare -P melt-release`
+- `mvn release:perform -P melt-release`
