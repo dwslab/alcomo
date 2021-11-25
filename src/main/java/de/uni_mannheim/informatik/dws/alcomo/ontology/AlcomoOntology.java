@@ -56,7 +56,8 @@ import de.uni_mannheim.informatik.dws.alcomo.Settings.BlackBoxReasoner;
 *
 */
 public abstract class AlcomoOntology {
-	
+
+
 	public OWLClass THING = null;
 	public OWLClass NOTHING = null;
 	
