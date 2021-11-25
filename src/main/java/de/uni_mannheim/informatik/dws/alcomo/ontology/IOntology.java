@@ -70,7 +70,7 @@ public class IOntology extends LocalOntology {
 	}
 	
 	/**
-	* Checks whether two classes have a common named sublass (except NOTHING).
+	* Checks whether two classes have a common named subclass (except NOTHING).
 	* Should run in average in something between O(1) and O(b) where b is the
 	* average branching factor.
 	* 

@@ -13,6 +13,7 @@ Christian Meilicke. Alignment Incoherence in Ontology Matching. University Mannh
 ## Changes Introduced in this Fork
 - Refactoring to a maven project.
 - Fixed JavaDoc to be compliant, minor documentation fixes.  
+- Refactoring from `log4j` to `slf4j`.
 - Upload to maven central.
 
 

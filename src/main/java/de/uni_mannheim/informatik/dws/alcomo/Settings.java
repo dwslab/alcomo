@@ -28,7 +28,7 @@ package de.uni_mannheim.informatik.dws.alcomo;
 public class Settings {
 	
 	/**
-	* It is possible tochoose between different reasoners that act internally 
+	* It is possible to choose between different reasoners that act internally
 	* as black box oracle.
 	*/
 	public enum BlackBoxReasoner {

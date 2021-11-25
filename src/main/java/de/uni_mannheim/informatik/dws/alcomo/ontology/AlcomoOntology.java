@@ -51,7 +51,7 @@ import de.uni_mannheim.informatik.dws.alcomo.Settings;
 import de.uni_mannheim.informatik.dws.alcomo.Settings.BlackBoxReasoner;
 
 /**
-* This abstract class represents an ontology used in the alcomo system.
+* This abstract class represents an ontology used in the ALCOMO system.
 * It can be seen
 *
 */

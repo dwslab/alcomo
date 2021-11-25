@@ -24,17 +24,20 @@
 
 package de.uni_mannheim.informatik.dws.alcomo.util;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import org.apache.log4j.Logger;
 
 /**
 * A wrapper for the log4j logging mechanism.
 */
 public class AlcomoLogger {
-	
-	private Logger log;
+
+
+	private static final Logger LOGGER = LoggerFactory.getLogger(AlcomoLogger.class);
 	
 	private static ArrayList<String> breakpoints = new ArrayList<String>();
 	private static HashMap<String, Long> timestamps = new HashMap<String, Long>();
@@ -46,14 +49,14 @@ public class AlcomoLogger {
 	*/
 	@SuppressWarnings("unchecked")
 	public AlcomoLogger(Class c) {
-		this.log = Logger.getLogger(c.getName());
+
 	}
 
 	/**
 	* Logs a start sign for a series of progress infos as info message.
 	*/
 	public void infoPStart() {
-		this.log.info("[ ");
+		this.LOGGER.info("[ ");
 	}
 	
 	/**
@@ -62,14 +65,14 @@ public class AlcomoLogger {
 	* @param prefixExpl An explanation that prefixes the progress information.
 	*/
 	public void infoPStart(String prefixExpl) {
-		this.log.info("[ " + prefixExpl + " ");
+		this.LOGGER.info("[ " + prefixExpl + " ");
 	}
 	
 	/**
 	* Logs a end sign for a series of progress infos as info message followed by a newline.
 	*/
 	public void infoPEnd() {
-		this.log.info("]\n");
+		this.LOGGER.info("]\n");
 	}		
 	
 	/**
@@ -78,7 +81,7 @@ public class AlcomoLogger {
 	* @param word Word to be logged.
 	*/
 	public void infoW(String word) {
-		this.log.info(word);
+		this.LOGGER.info(word);
 	}
 	
 	/**
@@ -88,7 +91,7 @@ public class AlcomoLogger {
 	*/
 	public void infoP(double progress) {
 		// System.out.println("xx: " +  progress);
-		this.log.info((int)(progress * 100) + "% ");
+		this.LOGGER.info((int)(progress * 100) + "% ");
 	}	
 	
 	/**
@@ -97,7 +100,7 @@ public class AlcomoLogger {
 	* @param statement The statement to be logged.
 	*/
 	public void infoS(String statement) {
-		this.log.info("[" + statement + "]\n");
+		this.LOGGER.info("[" + statement + "]\n");
 	}
 	
 	/**
@@ -106,7 +109,7 @@ public class AlcomoLogger {
 	* @param statement Statement to be logged.
 	*/
 	public void warnS(String statement) {
-		this.log.warn("[!WARN! " + statement + " !WARN!]\n");
+		this.LOGGER.warn("[!WARN! " + statement + " !WARN!]\n");
 	}
 	
 	public static void takeTime(String breakpoint) {

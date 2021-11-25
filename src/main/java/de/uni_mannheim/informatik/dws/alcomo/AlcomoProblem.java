@@ -25,7 +25,6 @@
 package de.uni_mannheim.informatik.dws.alcomo;
 
 
-import org.apache.log4j.PropertyConfigurator;
 
 import de.uni_mannheim.informatik.dws.alcomo.exceptions.AlcomoException;
 import de.uni_mannheim.informatik.dws.alcomo.exceptions.PCFException;
@@ -119,17 +118,5 @@ public abstract class AlcomoProblem {
 			);	
 		}		
 	}
-	
-	static {
-		// looks strange, but some other bibs seem to output something that i do not
-		// want to see
-		java.util.logging.Logger logger = java.util.logging.Logger.getLogger("");
-		logger.setLevel(java.util.logging.Level.SEVERE);
-		PropertyConfigurator.configure(System.getProperty("user.dir") + "\\" + Settings.LOG4J_PROPERTY_FILE);		
-	}
-	
-
-
-	
 	
 }

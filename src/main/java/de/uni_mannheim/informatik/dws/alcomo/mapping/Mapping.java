@@ -26,7 +26,6 @@ package de.uni_mannheim.informatik.dws.alcomo.mapping;
 
 import de.uni_mannheim.informatik.dws.alcomo.exceptions.MappingException;
 import de.uni_mannheim.informatik.dws.alcomo.exceptions.OntologyException;
-import org.apache.log4j.Logger;
 
 import java.util.AbstractList;
 import java.util.ArrayList;
@@ -43,6 +42,8 @@ import de.uni_mannheim.informatik.dws.alcomo.exceptions.PCFException;
 import de.uni_mannheim.informatik.dws.alcomo.ontology.ConflictPair;
 import de.uni_mannheim.informatik.dws.alcomo.ontology.Entity;
 import de.uni_mannheim.informatik.dws.alcomo.ontology.LocalOntology;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 /**
@@ -68,12 +69,9 @@ public class Mapping implements Iterable<Correspondence>, Comparable<Mapping>   
 	private ArrayList<Correspondence> correspondences = null;
 	private Set<ConflictPair> conflictPairs = null;
 	
-	protected Logger log;
+	private static final Logger LOGGER = LoggerFactory.getLogger(Mapping.class);
 	
 	protected boolean[] idPattern = null;
-
-	
-	
 	
 	private double propertyAdjustmentFactor = 0.0;
 	private double conceptAdjustmentFactor = 0.0;
@@ -82,8 +80,7 @@ public class Mapping implements Iterable<Correspondence>, Comparable<Mapping>   
 	* Constructs a mapping with an empty list of correspondences.
 	*/
 	public Mapping() {
-		this(new ArrayList<Correspondence>());
-		this.log = Logger.getLogger("de.unima.alcomox.mapping.Mapping");
+		this(new ArrayList<>());
 	}
 	
 	/**
@@ -248,7 +245,7 @@ public class Mapping implements Iterable<Correspondence>, Comparable<Mapping>   
 	public double getConfidenceLowerBound() {
 		double lowerBound = Double.MAX_VALUE;
 		for (Correspondence c : this.getCorrespondences()) {
-			lowerBound = c.getConfidence() < lowerBound ? c.getConfidence() : lowerBound;
+			lowerBound = Math.min(c.getConfidence(), lowerBound);
 		}
 		return lowerBound;
 	}
@@ -256,7 +253,7 @@ public class Mapping implements Iterable<Correspondence>, Comparable<Mapping>   
 	public double getConfidenceUpperBound() {
 		double upperBound = Double.MIN_VALUE;
 		for (Correspondence c : this.getCorrespondences()) {
-			upperBound = c.getConfidence() > upperBound ? c.getConfidence() : upperBound;
+			upperBound = Math.max(c.getConfidence(), upperBound);
 		}
 		return upperBound;
 	}	
@@ -375,14 +372,14 @@ public class Mapping implements Iterable<Correspondence>, Comparable<Mapping>   
 	* Applies a threshold on the mapping by removing every
 	* correspondence with a confidence below the threhold.
 	* 
-	* @param threshhold The threshold.
+	* @param threshold The threshold.
 	* @return The number of correspondences that have been removed.
 	*/
-	public int applyThreshhold(double threshhold) {
-		ArrayList<Correspondence> thresholdedCorrespondences = new ArrayList<Correspondence>();
+	public int applyThreshold(double threshold) {
+		ArrayList<Correspondence> thresholdedCorrespondences = new ArrayList<>();
 		int numOfRemovedCorrespondences = 0;
 		for (Correspondence c : this.correspondences) {
-			if (c.getConfidence() > threshhold) { thresholdedCorrespondences.add(c); }
+			if (c.getConfidence() > threshold) { thresholdedCorrespondences.add(c); }
 			else { numOfRemovedCorrespondences++; }
 		}
 		this.correspondences = thresholdedCorrespondences;
@@ -532,20 +529,20 @@ public class Mapping implements Iterable<Correspondence>, Comparable<Mapping>   
 
 			try { sourceEntity = sourceOntology.getEntityByUri(c.getSourceEntityUri()); }
 			catch(OntologyException e) {
-				this.log.warn("<correspondence " + c + " refers not existing entity " + c.getSourceEntityUri()+ ">");
+				this.LOGGER.warn("<correspondence " + c + " refers not existing entity " + c.getSourceEntityUri()+ ">");
 				nonreferingMapping.push(c);
 				this.remove(i);
 				continue;
 			}
 			try { targetEntity = targetOntology.getEntityByUri(c.getTargetEntityUri()); }
 			catch(OntologyException e) {
-				this.log.warn("<correspondence " + c + " refers not existing entity " + c.getTargetEntityUri() + ">");
+				this.LOGGER.warn("<correspondence " + c + " refers not existing entity " + c.getTargetEntityUri() + ">");
 				nonreferingMapping.push(c);
 				this.remove(i);
 				continue;
 			}			
 			if (!(sourceEntity.isConcept() == targetEntity.isConcept())) {
-				this.log.warn("<correspondence " + c + " combines different types of entities (ignored) >");
+				this.LOGGER.warn("<correspondence " + c + " combines different types of entities (ignored) >");
 				nonreferingMapping.push(c);
 				this.remove(i);
 				continue;
@@ -1049,12 +1046,9 @@ public class Mapping implements Iterable<Correspondence>, Comparable<Mapping>   
 			cEquiv.setTargetEntity(c.getTargetEntity());	
 		}
 		catch (CorrespondenceException e) {
-			
+			LOGGER.error("A CorrespondenceException occurred.", e);
 		}
 		return cEquiv;
 	}
-	
-
-
 
 }

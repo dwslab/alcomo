@@ -31,9 +31,10 @@ import de.uni_mannheim.informatik.dws.alcomo.exceptions.CorrespondenceException;
 * between entities of different ontologies.   
 */
 public class SemanticRelation {
-	
+
+
 	/**
-	* Relation thats not available.
+	* Relation which is not available.
 	*/	
 	public static final int NA = 0;	
 	
@@ -56,10 +57,12 @@ public class SemanticRelation {
 	* Relation of disjointness, e.g. A != B.
 	*/	
 	public static final int DIS = 4;
-	
 
-	
-	private int type;
+	/**
+	 * Numeric type of the semantic relation. The type int encodes its meaning.
+	 * Have a look at the constants of this class for the implemented semantics.
+	 */
+	private final int type;
 	
 	/**
 	* Constructs a semantic relation of a certain type.
@@ -78,7 +81,8 @@ public class SemanticRelation {
 	
 	/**
 	* 
-	* @return The type of this semantic relation.
+	* @return The type of this semantic relation as int. Have a look at the constants of this class to
+	* 		  find the semantic meaning of the type.
 	*/
 	public int getType() {
 		return this.type;
@@ -136,6 +140,5 @@ public class SemanticRelation {
 			return this;
 		}
 	}
-	
-	
+
 }

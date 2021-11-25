@@ -63,7 +63,7 @@ public class ExampleXYZ {
 
 		// load the mapping
 		Mapping mapping = new Mapping(alignPath);
-		mapping.applyThreshhold(0.3);
+		mapping.applyThreshold(0.3);
 		System.out.println("thresholded input mapping has " + mapping.size() + " correspondences");
 		
 		// define diagnostic problem
@@ -91,12 +91,9 @@ public class ExampleXYZ {
 		Mapping ref = new Mapping(refPath);
 		Characteristic cBefore = new Characteristic(mapping, ref);
 		Characteristic cAfter = new Characteristic(extracted, ref);
-		
-		
+
 		System.out.println("before debugging (pre, rec, f): " + cBefore.toShortDesc());
 		System.out.println("after debugging (pre, rec, f):  " + cAfter.toShortDesc());
-		
-
 	
 	}
 

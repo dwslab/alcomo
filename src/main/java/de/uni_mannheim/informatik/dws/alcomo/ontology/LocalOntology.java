@@ -56,7 +56,7 @@ import de.uni_mannheim.informatik.dws.alcomo.Settings;
 
 /**
 * This class represents a local possibly extended ontology.
-* Two of these extandable ontologies are used for the pairwise efficient but incomplete reasoning.
+* Two of these extendable ontologies are used for the pairwise efficient but incomplete reasoning.
 */
 public class LocalOntology extends AlcomoOntology {
 	
@@ -70,7 +70,7 @@ public class LocalOntology extends AlcomoOntology {
 	
 	
 	// used for getting a random entity, fixed seed to make things reproducible
-	private final long SEED = 1000l;
+	private final long SEED = 1000L;
 	private Random rand;
 	
 	// all concept uris and property uris are stored in an array
@@ -130,14 +130,14 @@ public class LocalOntology extends AlcomoOntology {
 		catch (OWLOntologyCreationException e) {
 			throw new OntologyException(
 					OntologyException.INVALID_FORMAT, 
-					"ontology file at " + filepathOrUrl + " could not sucessfully be parsed", 
+					"ontology file at " + filepathOrUrl + " could not successfully be parsed",
 					e
 			);
 		}
 		catch (IllegalArgumentException e) {
 			throw new OntologyException(
 					OntologyException.INVALID_FORMAT, 
-					"ontology file at " + filepathOrUrl + " could not sucessfully be parsed", 
+					"ontology file at " + filepathOrUrl + " could not successfully be parsed",
 					e
 			);
 		}
