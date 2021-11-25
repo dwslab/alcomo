@@ -19,5 +19,5 @@ Christian Meilicke. Alignment Incoherence in Ontology Matching. University Mannh
 ## Project-Specific Documentation
 
 ### Creating a New Release for Maven Central
-- `mvn release:prepare -P melt-release`
-- `mvn release:perform -P melt-release`
+- `mvn release:prepare -P alcomo-release`
+- `mvn release:perform -P alcomo-release`
